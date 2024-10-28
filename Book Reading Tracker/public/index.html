@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Reading Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="container mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-6">Book Reading Tracker</h1>
+    
+    <!-- Book Form -->
+    <form id="bookForm" class="p-4 bg-white shadow-md rounded my-6">
+      <input type="text" id="title" placeholder="Title" class="mb-4 p-2 w-full border" required>
+      <input type="text" id="author" placeholder="Author" class="mb-4 p-2 w-full border" required>
+      <input type="number" id="pages" placeholder="Number of Pages" class="mb-4 p-2 w-full border" required>
+      <input type="number" id="price" placeholder="Price" class="mb-4 p-2 w-full border" required>
+      <input type="number" id="pagesRead" placeholder="Pages Read" class="mb-4 p-2 w-full border" value="0">
+      <input type="text" id="suggestedBy" placeholder="Suggested By" class="mb-4 p-2 w-full border">
+      
+      <select id="status" class="mb-4 p-2 w-full border">
+        <option value="Want to read">Want to read</option>
+        <option value="Read">Read</option>
+        <option value="Re-read">Re-read</option>
+        <option value="DNF">DNF</option>
+        <option value="Currently reading">Currently reading</option>
+        <option value="Returned Unread">Returned Unread</option>
+      </select>
+
+      <select id="format" class="mb-4 p-2 w-full border">
+        <option value="Print">Print</option>
+        <option value="PDF">PDF</option>
+        <option value="Ebook">Ebook</option>
+        <option value="AudioBook">AudioBook</option>
+      </select>
+
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add Book</button>
+    </form>
+
+    <div id="bookList" class="mt-6">
+      <h2 class="text-2xl font-bold mb-4">Books</h2>
+      <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="py-2 px-4 border">Title</th>
+            <th class="py-2 px-4 border">Author</th>
+            <th class="py-2 px-4 border">Pages</th>
+            <th class="py-2 px-4 border">Pages Read</th>
+            <th class="py-2 px-4 border">Price</th>
+            <th class="py-2 px-4 border">Suggested By</th>
+            <th class="py-2 px-4 border">Status</th>
+            <th class="py-2 px-4 border">Format</th>
+            <th class="py-2 px-4 border">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="bookTableBody">
+          <!-- Book entries will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
