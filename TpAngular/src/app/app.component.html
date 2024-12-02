@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="empty-books" *ngIf="isBooksEmpty()">No books available.</div>
+  <ul *ngIf="!isBooksEmpty()">
+    <li *ngFor="let book of books">
+      <input type="checkbox" [checked]="book.isRead" (change)="toggleReadStatus(book)">
+      {{ book.name }} - {{ book.isRead ? 'Read' : 'Unread' }}
+    </li>
+  </ul>
+</div>
